@@ -85,4 +85,23 @@ void main() {
     int result2 = eleFunc3(ele3);
     print("result: $result2");
   print(eleFunc2(ele2));
+  
+  int a = 1;
+  print(a);
+  
+  int name = 2;
+  print(name);
+  
+  int func({x=0}) {
+    return x;
+  }
+  int result = func();
+  print("결과:$result");
+  
+  //int func(x) => x+1;
+  //print(func(1));
+  
+  int func1(x) => x+1;
+  //print(func1);
+  print(func1(1));
 }
