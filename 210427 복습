@@ -1,0 +1,88 @@
+void main() {
+  int a=123;
+  a=1;
+  a;
+  print(a);
+  int b=2;
+  a=b;
+  b=3;
+  {
+    int c=3;
+    print(a);
+    print(c);
+    {
+      int d = 4;
+    }
+  }
+  {
+    print(a);
+    int e = 5;
+    print(e);
+  }
+  
+  int vv = 0;
+  {
+    int v1 = 0;
+    print(v1);
+    print(vv);
+  }
+  {
+    int v1 = 0;
+    print(v1);
+    print(vv);
+  }
+  
+  print(a);
+  
+  int func(){
+    return 123;
+  }
+  
+  print(func());
+  
+  int funcvalue = func();
+  print(funcvalue);
+  
+  int func2(int x) {
+    return x+1;
+  }
+  
+  print(func2(123));
+  
+  int func3(int x, int y){
+    return x+y;
+  }
+  print(func3(1, 2));
+    
+    int func4({int x= 0, int y =0}) {
+    return x+y+1;
+  }
+  print(func4(y:12, x:1));
+  print(func4());
+  int func5(int x, {int y = 0}) {
+    return x+2;
+  }
+  print(func5(1));
+  
+  int func6({required int x, int y=0}) => x+2;
+  print(func6(x:98, y:1));
+  
+  int ele = 123;
+  int eleFunc(int ele) {
+    //int ele =333;
+    return ele+2;
+  }
+  int result = eleFunc(ele);
+  
+  print("result: $result");
+  
+  //연습
+  int ele2 = 100;
+  int eleFunc2(int ele2) => ele2+1;
+  
+  int eleFunc3(int ele3) => ele3+2;
+  int ele3 = 13;
+    int result2 = eleFunc3(ele3);
+    print("result: $result2");
+  print(eleFunc2(ele2));
+}
