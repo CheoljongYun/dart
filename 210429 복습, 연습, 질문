@@ -1,0 +1,130 @@
+void main() {
+
+    int value2 = 123;
+
+  
+  int a = 1; 
+  a = 123;
+  a;
+  print(a);
+
+  int b = 2;
+  a = b;
+  b = 3;
+
+  {
+    int c = 3; 
+    print(a);
+    print(c);
+    {
+      int d = 4; 
+         }
+   }
+  
+  {
+    print(a);
+    int e = 5;
+    print(e);
+  }
+
+
+  {
+    int v1 = 0;
+    print(v1);
+  }
+  {
+    int v1 = 0;
+    print(v1);
+  }
+  
+  int vv = 0;
+  {
+    print(vv);
+  }
+  {
+    print(vv);
+  }
+  
+  print(a); //
+  // print(c)
+
+  // 질문
+  // <결괏값 타입> <함수 이름(인자)> <{연산, 로직 등}>
+  // => {연산, 로직 등}에서 {연산, 로직 등;}이 맞는 것이죠?
+
+  int func(){
+    return 123;
+  }
+
+  print(func());
+
+  int funcvalue = func();
+  print(funcvalue);
+
+  int func2(int x){
+    return x+1;
+  }
+
+  print(func2(123));
+
+  int func3(int x, int y){
+    return x+y;
+  }
+
+  print(func3(1, 2));
+
+  int func4({int x = 0, int y = 0}){
+    return x+y+1;
+  }
+
+  print(func4(y:12, x:1));
+
+  int func5(int x,{int y = 0}){
+    return x+2;
+  }
+  
+  print(func5(1));
+  
+  //연습
+  print("");
+   print("연습");
+  
+  int func44(int x, {int y = 0}){
+    return x+2+y;
+  }
+
+  print(func44(1));
+  print(func44(1, y:1));
+  //print(func44(y:1, 1));
+  //print(func44(y:1, x));
+  
+  int func6({required int x, int y=0}) => x+2;
+
+  print(func6(x:98));
+  
+  print("");
+  print("연습");
+  int func66({required int x, int y=0}) => x+y+3;
+  print(func66(x:98, y:33));
+  print(func66(x:2));
+  
+  //질문
+  //이건 왜 안 되나요? required가 앞에 나오면 네이밍 옵션이 안 붙은 변수(?)는 뒤에 못 오나요?
+  //int func67({required int x}, int z) => x+z+1;
+  //print(func67(x:1, 2));
+  
+  int func67(int z, {required int x}) => x+z+1;
+  print(func67(2, x:1));
+  //print(func67(2, 1));
+  //print(func67(x:1, 2));
+  //print(func67(x:1, z:2));
+  //print(func67(z:2, x:1));
+  
+  {
+    int func8(){
+      return 0;
+    }
+  }
+  //print(func8());
+
+} //전역변수 다 날아감
