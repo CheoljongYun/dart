@@ -1,0 +1,24 @@
+void main () {
+  
+  int a = 123;
+  print(a);
+  
+  { int b = 1212;
+   print(b);
+  print(a);}
+  
+  int func(x)  {
+    return x+1;
+  }
+  print (func(2));
+  
+  int func1(y) => y+1;
+  print(func1(3));
+  
+  int func2(x) {
+    return x*2;
+  }
+  print (func2(4));
+  
+  
+}
