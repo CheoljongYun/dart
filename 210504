@@ -1,0 +1,135 @@
+//생략 가능해도 기본적으로 써야 하는 것들은 쓰는 습관을 들이자
+
+void main(){
+  
+ //print(a);
+ //int a= 123;
+ //위 경우는 오류가 나는데 class 경우는 오류가 안 난다
+ //main 함수 실행되기 전에 class를 컴퓨터가 미리 불러오고 class 내용을 찾아간다. 다트에서만 가능, 자바에서는 불가능 - 함수 안에서 class를 생성하기 때문 
+  
+ // class를 생성할 때 new 생략 가능, JS는 생략 불가능, 언어마다 생략 가능/불가능 다르지만 항상 쓰는 게 좋다
+ //함수와 헷갈릴 수 있기 때문에 클래스앞에 new 입력, 대/소문자로 구분
+  Main main = new Main(); // 소괄호까지 넣어야 출력이 된다. 출력된 결과(출력값) -> "인스턴스"
+  print( main );
+  print(main.name); // 아무 값도 안 나옴. 아무 것도 안 적어 놔서
+  main.name = 'James'; //작은따옴표 큰따옴표 상관없음 시작과 끝만 맞춰 쓰면 된다
+  print(main.name);
+  
+  print(new Main().name);
+  // String name = "공란" 값을 가져옴.
+  
+  
+  main.pr();
+  new Main().pr();
+  
+  
+  
+  Child ch = new Child(321, i: 123); //인자를 반드시 입력해야 한다 괄호 안에 int i 있기 때문
+  print(ch.i);
+  //ch.age
+  
+  Child ch2 = new Child.abc(555);
+  print(ch2.i);
+  
+  Child.age; // 구조로는 보지 않는다. <이름/목적을 자세하게 붙여준 일반적인 변수> 정도로 본다
+   // static 왜 쓰나요?
+  int red = 123;
+  
+  //무수한 코드
+  //많은 코드
+  //무한대의 코드
+  
+  Colors.red;
+  //무수히 많은
+  //코드
+  
+  Colors.red; // 원래는 13
+  
+  Colors.red = 666666;
+  
+  print(Colors.red);
+  
+  //빨간색을 다시 보려는데 내가 뭐라고 썼는지 잊어버렸을 때 (red였는지 레드였는지 등등) 위에서 찾기 힘드니까
+  
+  print(Colors.op());
+  
+}
+  class Colors{
+    static int red = 13; //단순히 변수에 이름을 붙였다고 생각하면 된다
+    static int op(){
+      return 123;
+    }
+   
+}
+
+// Class
+// ? : 변수와 함수 묶어줌
+// -> 재활용
+// -> 간결
+// : 양식
+// 조퇴증 양식 : 출력
+// Dart / Flutter -> Class 로 생성 - 활용
+// --> 객체지향 프로그래밍 OOP
+// : 다형성
+
+// 함수 안에서 클래스를 만들 수 없다(선언 불가)
+// 중괄호 바깥에서 클래스를 만든다
+// 클래스 만들기
+// class ClassName{... 변수, 함수, ...}
+// * 암묵적인 규칙 : 첫 글자는 대문자 / 변수, 함수 첫 글자는 소문자로
+
+class Main{
+  // ** 구조체: 변수 재할당 불가능. 클래스는 단순히 양식을 만드는 공간
+  // 나머지 지역변수/전역변수 등에 대한 개념은 동일
+  
+  String name = "공란"; // 변수 초기화. 기본값 넣어줌
+  // name = "123";
+  
+  void pr(){ //함수의 결과가 숫자/문자 등 어떤 값으로 귀결되지 않고 기능으로서의 역할만 할 때 void 입력 - > 값이 없다
+    print("${this.name} 님, 안녕하세요."); //추가적인 연산이 필요할 때는 this. 뒤에 붙는 변수까지 중괄호로 포함하기
+    //함수 안에서도 같은 이름으로 다른 값의 형태를 쓰는 경우가 많아서 this 적지 않으면 name이 지역/전역변수에 따라 가장 가까이 있는 중괄호 안의 name을 따르게 된다. 클래스 내의 String name 값을 써 줘 => this.name
+    return; //출력되는 값 없이 함수를 끝내겠다
+  }
+  
+}
+
+
+// * 생성자( 함수) - 오로지 하나만 있을 수 있다
+
+class Child{
+  
+  int i = 0;
+  
+  //함수에서 쓰던 기본, 네이밍, 섞어서 쓰는 방식 모두 사용 가능
+  
+  //기본
+//   Child(int i){
+//     print("Child를 만들 때 무언가 하고 싶다면"); // 특정 작업
+//     this.i = i; //여기에 쓰는 인자를 이 클래스로 들어오는 i에 넣어줄 거야
+//     //return X : Child 인스턴스를 알아서 반환하기 때문에 리턴 쓰면 안 됨
+//   }
+// //  Child(this.i); //위 내용을 줄인 표현
+  
+  //네이밍
+//Child({required int i}){
+//  this.i = i;   //네이밍 옵션이기 때문에 "i=" 반드시 써 줘야 한다(이름 지정)
+// = Child({required this.i});
+  
+  //섞어서
+  Child(int x, {required int i}){
+    this.i = i+x;
+  }
+    
+  Child.abc(int x){
+    this.i = x;
+  }
+  
+  static int age = 123;
+ 
+}
+  
+
+
+
+// new Child(...인자처럼); // Child
+// new Child.aaa(); // Child
