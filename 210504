@@ -133,3 +133,76 @@ class Child{
 
 // new Child(...인자처럼); // Child
 // new Child.aaa(); // Child
+
+
+-----조건문과 반복문
+
+
+void main(){
+
+  // 조건문 : 특정 조건을 만족하면 실행
+  // if - else (둘이 세트)
+  // 값 bool - true / false
+  // *비교연산자
+  // >, <, ==, >=, <=
+  
+  int a = 11;
+  
+  if(a < 10){ //if의 소괄호로 조건을 판단 -> if 충족 시 true, else 충족 시 false
+    print("a는 10보다 작다");
+    return;
+  }
+  else if( a >=10 && a <20){ //조건 추가. "||" => or(또는) 연산, "&&" => and(그리고) 연산
+    print("a는 10보다 크거나 같고, 20보다 작다");
+  }
+  else{
+    print("a는 20보다 크거나 같다");
+    return; //전체 코드가 void main 함수 내에서 이뤄지므로 return 사용 가능. 뒤 return 실행되기 전에 여기서 조건 맞으면 함수를 끝내버릴 것
+  }
+  
+  int check(int a){   //check 함수
+    if(a < 10){ 
+      print("a는 10보다 작다");
+  //     if(){}
+  //     else{}
+  //     중첩해서 쌓을 수 있음
+      return 123456789;
+    }
+    else if( a >=10 && a <20){
+      print("a는 10보다 크거나 같고, 20보다 작다");
+      // return
+    }
+    else{
+      print("a는 20보다 크거나 같다");
+  //     if(){}
+  //     else{}
+
+      return 21212121223; 
+    }
+    print("check는 실행중"); // elseif에 해당하는 내용
+    return 1020;
+  }
+
+  //줄여서 짧게 쓰기
+  int check2(int y){
+    if(y < 10) { print("asd"); return 9;} //바로 리턴값을 반환하는 게 아니면 중괄호로 묶어줘야 한다
+    //else if() 대신
+    if(y >= 10 && y < 20) return 1020;
+    return 20202020; //else 값이 된다
+  }
+  
+  print( " check2 : ${check2(2) }");
+  
+  int ch = check(1); //함수에 elseif에 해당하는 인자 넣어줌
+  print(ch);
+   // = print(check(14));
+  
+  
+  print(" ---반복문 진행 전---");
+  
+  // 반복문 : 특정 행위를 반복
+  
+  
+//원래는 여기 return; 이 있는데 생략되기도 한다 
+  return;
+}
