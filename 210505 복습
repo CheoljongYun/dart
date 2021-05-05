@@ -1,0 +1,29 @@
+void main (){
+
+  Main main = new Main();
+
+  print(main);
+  print(main.name);
+  main.name = "윤다혜";
+  print(main.name);
+
+  // new Main().name; => 복습: 별도 출력 안 됨, 메모리에 할당만
+
+  print(new Main().name);
+
+}
+
+//클래스는 함수 밖에서 형성
+
+class Main{
+
+  String name = "-";
+
+  // string name = ""; 이건 왜 안 되는가
+  // int name = 123;  이건 왜 되는가
+
+}
+
+
+
+//오늘은 최선을 다해서 여기까지만 이해를 했어요...사실 이해한건지 잘 모르겠어요
